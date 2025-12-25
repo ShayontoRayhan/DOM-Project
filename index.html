@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>DOM Project - Assignment 04</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="#">DOM Project</a>
+			<button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+			<div class="header-actions">
+				<input id="search" type="search" placeholder="Search gallery..." aria-label="Search gallery">
+				<button id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">☀️</button>
+			</div>
+			<nav id="nav" class="site-nav">
+				<ul>
+					<li><a href="#features">Features</a></li>
+					<li><a href="#gallery">Gallery</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="container hero-inner">
+				<div class="hero-text">
+					<h1>Build with Raw DOM</h1>
+					<p>Create responsive UI using plain HTML, CSS and JavaScript.</p>
+					<a class="btn" href="#features">See Features</a>
+				</div>
+				<div class="hero-illustration">
+					<img src="https://picsum.photos/seed/dom/600/400" alt="illustration">
+				</div>
+			</div>
+		</section>
+
+		<section id="features" class="features container">
+			<h2>Features</h2>
+			<div class="cards">
+				<article class="card">
+					<h3>Responsive Layout</h3>
+					<p>Fluid grids and breakpoints for all screen sizes.</p>
+				</article>
+				<article class="card">
+					<h3>DOM Interactions</h3>
+					<p>Toggle menus, modals, and validate forms using vanilla JS.</p>
+				</article>
+				<article class="card">
+					<h3>Accessible</h3>
+					<p>Keyboard-friendly controls and semantic markup.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="threeD" class="threeD container">
+			<h2>3D Demo</h2>
+			<div class="cube-wrap">
+				<div class="cube-tilt" id="cubeTilt">
+					<div class="cube-anim" id="cubeAnim">
+						<div class="face face1">Front</div>
+						<div class="face face2">Back</div>
+						<div class="face face3">Right</div>
+						<div class="face face4">Left</div>
+						<div class="face face5">Top</div>
+						<div class="face face6">Bottom</div>
+					</div>
+				</div>
+			</div>
+			<div class="cube-controls">
+				<!-- controls removed: cube auto-rotates for demo -->
+			</div>
+		</section>
+
+		<section id="gallery" class="gallery container">
+			<h2>Gallery</h2>
+			<div class="grid">
+				<img src="https://picsum.photos/seed/1/400/300" alt="Photo 1" data-full="https://picsum.photos/seed/1/1200/900">
+				<img src="https://picsum.photos/seed/2/400/300" alt="Photo 2" data-full="https://picsum.photos/seed/2/1200/900">
+				<img src="https://picsum.photos/seed/3/400/300" alt="Photo 3" data-full="https://picsum.photos/seed/3/1200/900">
+				<img src="https://picsum.photos/seed/4/400/300" alt="Photo 4" data-full="https://picsum.photos/seed/4/1200/900">
+				<img src="https://picsum.photos/seed/5/400/300" alt="Photo 5" data-full="https://picsum.photos/seed/5/1200/900">
+				<img src="https://picsum.photos/seed/6/400/300" alt="Photo 6" data-full="https://picsum.photos/seed/6/1200/900">
+			</div>
+		</section>
+
+		<section id="contact" class="contact container">
+			<h2>Contact</h2>
+			<form id="contact-form" novalidate>
+				<div class="form-row">
+					<label for="name">Name</label>
+					<input id="name" name="name" type="text" required>
+				</div>
+				<div class="form-row">
+					<label for="email">Email</label>
+					<input id="email" name="email" type="email" required>
+				</div>
+				<div class="form-row">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="4" required></textarea>
+				</div>
+				<div class="form-row">
+					<button type="submit" class="btn">Send Message</button>
+				</div>
+				<div id="form-confirm" class="form-confirm" aria-live="polite" hidden></div>
+			</form>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>&copy; 2025 DOM </p>
+		</div>
+	</footer>
+
+	<!-- Image modal -->
+	<div id="img-modal" class="modal" aria-hidden="true">
+		<div class="modal-content" role="dialog" aria-modal="true">
+			<button id="modal-close" class="modal-close" aria-label="Close">✕</button>
+			<button id="modal-prev" class="modal-nav" aria-label="Previous image">‹</button>
+			<img id="modal-img" src="" alt="Expanded image">
+			<button id="modal-next" class="modal-nav" aria-label="Next image">›</button>
+			<div id="modal-caption" class="modal-caption" aria-live="polite"></div>
+			<button id="modal-autoplay" class="modal-autoplay" aria-pressed="false" title="Toggle autoplay">▶</button>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
